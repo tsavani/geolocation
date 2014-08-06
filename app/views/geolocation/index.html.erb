@@ -1,0 +1,16 @@
+<% provide(:page_title, 'GeoLocation') %>
+<!--  <%#= form_for :geolocation, :url => '/geolocation' do |f| %>
+   <div class="field">
+  	<%#= f.label :EnterLatitude %>
+  	<%#= f.text_field :latitude %>
+  </div>
+  <div class="field">
+  	<%#= f.label :EnterLongitude %>
+  	<%#= f.text_field :longitude %>
+  </div>
+  <div class="field">
+  	 <%#= f.submit "Get City!" , class: "btn btn-large btn-primary"  %>
+  </div> -->
+  <div>
+    <p>Current location is : </p> <%= @city if !@city.nil? %>
+  </div>
