@@ -22,8 +22,9 @@
   <%= label :longitude, "Enter Longitude : "  %>
   <%= text_field_tag :longitude, params[:longitude], class: "form_field", placeholder: "Enter Longitude" %>
 </div>
+<hr>
 <div class="form-group">
-  <%= label :ip_address, "Ip Address : " %>
+  <%= label :ip_address, "IP Address :"%>
   <%= text_field_tag :ip_address, params[:ip_address], class: "form_field", placeholder: "Enter IP Address"%>
 </div>
   <%= submit_tag "Search", class: "btn btn-large btn-primary" %>
