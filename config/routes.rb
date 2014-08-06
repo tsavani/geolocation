@@ -2,6 +2,8 @@ Geolocation::Application.routes.draw do
   
   root "geolocation#index"
 
+  match '/geolocation',    to: 'geolocation#index',    via: 'post'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

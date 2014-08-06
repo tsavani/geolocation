@@ -11,6 +11,32 @@
   <div class="field">
   	 <%#= f.submit "Get City!" , class: "btn btn-large btn-primary"  %>
   </div> -->
-  <div>
-    <p>Current location is : </p> <%= @city if !@city.nil? %>
+<div class="geolocation_body">
+<%= form_tag geolocation_path, method: :post do %>
+
+<div class="form-group">
+  <%= label :latitude, "Enter Latitude : " %>
+  <%= text_field_tag :latitude, params[:latitude], class: "form_field", placeholder: "Enter Latitude" %>
+</div>
+<div class="form-group">
+  <%= label :longitude, "Enter Longitude : "  %>
+  <%= text_field_tag :longitude, params[:longitude], class: "form_field", placeholder: "Enter Longitude" %>
+</div>
+<div class="form-group">
+  <%= label :ip_address, "Ip Address : " %>
+  <%= text_field_tag :ip_address, params[:ip_address], class: "form_field", placeholder: "Enter IP Address"%>
+</div>
+  <%= submit_tag "Search", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+<div class="divider"></div>
+  <div class="output">
+    <% if !@city.blank? %>
+    <p>Current location is : <%= @city %> </p>
+    <% end %>
+    <% if !@city_ip.blank? %>
+     <p>Current location(IP) is :<%= @city_ip %>
+     <% end %>
   </div>
+
+

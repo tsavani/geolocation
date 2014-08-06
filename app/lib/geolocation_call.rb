@@ -5,4 +5,9 @@ class GeolocationCall
     geolocation = Geocoder.search("#{latitude},#{longitude}")
     geolocation.size == 0 ? [] : geolocation.first.city
   end
+
+  def self.get_city_name_from_ip(ip)
+  	geolocation = Geocoder.search("#{ip}")
+    geolocation.size == 0 ? [] : geolocation.first.city
+  end
 end
