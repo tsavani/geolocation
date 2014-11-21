@@ -27,17 +27,36 @@
   <%= label :ip_address, "IP Address :"%>
   <%= text_field_tag :ip_address, params[:ip_address], class: "form_field", placeholder: "Enter IP Address"%>
 </div>
+<hr>
+<div class="form-group">
+  <%= label :city_name, "City Name :"%>
+  <%= text_field_tag :city_name, params[:city_name], class: "form_field", placeholder: "Enter City Name"%>
+</div>
+
   <%= submit_tag "Search", class: "btn btn-large btn-primary" %>
 <% end %>
 </div>
 <div class="divider"></div>
   <div class="output">
     <% if !@city.blank? %>
-    <p>Current location is : <%= @city %> </p>
+    <p>Current location is : <b><%= @city %></b> </p>
+     <hr>
     <% end %>
-    <% if !@city_ip.blank? %>
-     <p>Current location(IP) is :<%= @city_ip %>
+   
+    <% if !@country_ip.blank? %>
+     <p>Current location(IP) is :<b><%= @country_ip %></b>
+     <p>Current location(IP) is :<b><%= @city_ip %></b>
+     <p>Current location(IP) is :<b><%= @zip_ip %></b>
+     <hr>
      <% end %>
+
+    <% if !@country.blank? %>
+     <p>Current country is :<b><%= @country %> </b>
+     <p>Current state is :<b><%= @state %></b>
+     <p>Current country code is :<b><%= @countrycode %></b> 
+      <hr>
+     <% end %>
+    
   </div>
 
 
